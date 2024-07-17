@@ -14,6 +14,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { UserEffects } from './effects/user-effects';
 import { HttpClientModule } from '@angular/common/http';
 import { RxjsLearningComponent } from './components/rxjs-learning/rxjs-learning.component';
+import { UsersComponent } from './components/users/users.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { RxjsLearningComponent } from './components/rxjs-learning/rxjs-learning.
     HomeComponent,
     NavComponent,
     RxjsLearningComponent,
+    UsersComponent,
 
   ],
   imports: [
@@ -30,7 +32,8 @@ import { RxjsLearningComponent } from './components/rxjs-learning/rxjs-learning.
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    StoreModule.forRoot({ count: counterReducer }),
+    StoreModule.forRoot(
+      { users: userReducer }),
     EffectsModule.forRoot([UserEffects])
   ],
   providers: [],

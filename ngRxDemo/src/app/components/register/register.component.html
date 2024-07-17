@@ -1,17 +1,17 @@
 <div class="mx-auto w-25">
     <h3>Register</h3>
-    <form class="border border-rounded p-3" [formGroup]=" regForm" (ngSubmit)="onSubmit(regForm)">
+    <form class="border border-rounded p-3">
         <div class="mb-3">
-            <input class="form-control" placeholder="Enter full name" name="fullName" formControlName="fullName" />
+            <input class="form-control" placeholder="Enter full name" name="fullName" />
         </div>
         <div class="mb-3">
-            <input class="form-control" placeholder="Enter email" formControlName="email" type="email" />
+            <input class="form-control" placeholder="Enter email" type="email" />
         </div>
         <div class="mb-3">
-            <input class="form-control" placeholder="Enter contact no." formControlName="contactNo" type="number" />
+            <input class="form-control" placeholder="Enter contact no." type="number" />
         </div>
         <div class="mb-3">
-            <input class="form-control" placeholder="Enter password" formControlName="password" type="password" />
+            <input class="form-control" placeholder="Enter password" type="password" />
         </div>
         <div class="mb-3">
             <input class="form-control" type="submit" value="Register" class="btn btn-primary" />

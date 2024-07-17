@@ -1,18 +1,8 @@
 import { createAction, props } from "@ngrx/store";
 
-// edit-name - type of action
-// props     - payload
 
-// Without createAction() method:
-// export const editName = (name) => {
-//     return {
-//         type: 'edit-name',
-//         payload: name
-//     }
-// }
-export const getUsers = createAction('getUsers', props<{ users: any[] }>());
-export const register = createAction('register', props<{ user: any }>());
+// setUsers - type of action
+// props - payload
 
-
-export const editName = createAction('edit-name', props<{ name: string }>());
-export const editEmail = createAction('edit-email', props<{ email: string }>());
+export const setUsers = createAction('setUsers', props<{ users: any }>());
+export const getUsers = createAction('get-users');

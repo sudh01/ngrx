@@ -1,7 +1,8 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { UserService } from "../services/user.service";
-import { mergeMap } from "rxjs";
+import { mergeMap, map } from "rxjs";
+import { getUsers, setUsers } from '../actions/user-actions';
 
 @Injectable()
 export class UserEffects {
@@ -13,14 +14,16 @@ export class UserEffects {
     // Actions - is a service & Observable(emits data)
     // megeMap = is used to make API Call
 
-    // fetchUsers$ = createEffect(() => {
-    //     this.action$.pipe(
-    //         ofType(getUsers),
-    //         mergeMap(() => {
-    //             this.userService.getUsers().pipe(
-    //                 map((users) =>)
-    //             )
-    //         })
-    //     )
-    // })
+    fetchUsers = createEffect(
+        () =>
+            this.action$.pipe(
+                ofType(getUsers),
+                mergeMap(
+                    () =>
+                        this.userService.getUsers().pipe(
+                            map((data) => setUsers({ users: data }))
+                        )
+                )
+            )
+    )
 }
