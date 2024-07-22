@@ -1,0 +1,27 @@
+<form [formGroup]="user" (ngSubmit)="onSubmit()" class="w-25 border rounded p-3 mx-auto">
+    <h4>Update User</h4>
+    <hr />
+    <div class="mb-3">
+        <label class="form-label" for="id">Id</label>
+        <input formControlName="empId" id="empId" type="number" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="fullName">Fullname</label>
+        <input formControlName='name' id="name" type="text" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="contactNo">Contact No</label>
+        <input formControlName='phone' id="phone" type="text" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label htmlFor="email" class="form-label">Email</label>
+        <input formControlName='email' type="email" class="form-control" id="email" aria-describedby="emailHelp" />
+    </div>
+    <div class="mb-3">
+        <label htmlFor="password" class="form-label">Password</label>
+        <input formControlName='password' type="password" class="form-control" id="password" />
+    </div>
+    <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-secondary">Submit</button>
+    </div>
+</form>

@@ -15,6 +15,8 @@ import { UserEffects } from './effects/user-effects';
 import { HttpClientModule } from '@angular/common/http';
 import { RxjsLearningComponent } from './components/rxjs-learning/rxjs-learning.component';
 import { UsersComponent } from './components/users/users.component';
+import { AddUserComponent } from './components/add-user/add-user.component';
+import { UpdateUserComponent } from './components/update-user/update-user.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { UsersComponent } from './components/users/users.component';
     NavComponent,
     RxjsLearningComponent,
     UsersComponent,
+    AddUserComponent,
+    UpdateUserComponent,
 
   ],
   imports: [

@@ -1,4 +1,27 @@
-<p>users works!</p>
-<ul *ngFor="let u of users">
-    <li>{{u.name}}</li>
-</ul>
+<div class="w-75 mx-auto">
+    <a routerLink="/users/add"><i class="bi bi-person-fill-add fs-3 mb-3 float-end"></i></a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let u of users">
+            <tr>
+                <td>{{u.empId}}</td>
+                <td>{{u.name}}</td>
+                <td>{{u.email}}</td>
+                <td>{{u.phone}}</td>
+                <td>
+                    <a [routerLink]="['/users/update/', u.empId]"><i class=" bi bi-pen-fill"></i></a>
+                    <i (click)=onDelete(u.empId) class="bi bi-trash"></i>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

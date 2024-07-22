@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { getUsers } from 'src/app/actions/user-actions';
+import { deleteUserById, getUserById, getUsers } from 'src/app/actions/user-actions';
 
 @Component({
   selector: 'app-users',
@@ -10,10 +10,13 @@ import { getUsers } from 'src/app/actions/user-actions';
 export class UsersComponent implements OnInit {
 
   users = [];
+  user: any;
 
   constructor(private store: Store<any>) { }
 
   ngOnInit() {
+    console.log("ngOnInit");
+    // Dispatch action to get list of users
     this.store.dispatch(getUsers());
     this.store.select('users').subscribe(
       data => {
@@ -22,4 +25,13 @@ export class UsersComponent implements OnInit {
       }
     )
   }
+  onDelete(id: number) {
+    console.log("onDelete: " + id);
+    this.store.dispatch(deleteUserById({ id: id }));
+    this.store.select('users').subscribe(
+      data => { this.users = data.users }
+    )
+  }
+
+
 }

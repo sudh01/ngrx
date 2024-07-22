@@ -15,7 +15,7 @@ export class RxjsLearningComponent implements OnInit {
   //observable = fromEvent(this.button, 'click');
 
   // Create an observable that emits a value every 1000ms (1 second)
-  observable = interval(10);
+
 
 
   // Converts string array to Observable
@@ -33,11 +33,7 @@ export class RxjsLearningComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.observable.subscribe({
-      next: value => console.log(value),
-      complete: () => console.log('Complete!'),
-      error: err => console.log('Error:', err)
-    });
+
 
     //this.name$.subscribe(data => console.log(data));
     // this.employees.subscribe(
