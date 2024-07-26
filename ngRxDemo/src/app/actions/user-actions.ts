@@ -12,6 +12,7 @@ export const getUsers = createAction('get-users');
 export const deleteUserById = createAction('deleteUserById', props<{ id: number }>());
 export const deleteUserByIdSuccess = createAction('deleteUserByIdSuccess', props<{ user: any }>());
 export const deleteUserByIdFailure = createAction('deleteUserByIdFailure', props<{ error: any }>());
+
 // update user
 export const updateUser = createAction('updateUser', props<{ user: any }>());
 export const updateUserSuccess = createAction('updateUserSuccess', props<{ user: any }>());

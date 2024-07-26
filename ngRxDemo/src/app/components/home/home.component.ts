@@ -11,7 +11,7 @@ export class HomeComponent {
   count: any;
 
   constructor(private store: Store<any>) {
-    store.select('count').subscribe(
+    store.subscribe(
       res => {
         console.log(res);
         this.count = res.count;

@@ -17,6 +17,10 @@ import { RxjsLearningComponent } from './components/rxjs-learning/rxjs-learning.
 import { UsersComponent } from './components/users/users.component';
 import { AddUserComponent } from './components/add-user/add-user.component';
 import { UpdateUserComponent } from './components/update-user/update-user.component';
+import { accountReducer } from './reducers/account-reducer';
+import { AccountEffects } from './effects/account-effects';
+import { LoginComponent } from './components/login/login.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 
 @NgModule({
@@ -30,6 +34,8 @@ import { UpdateUserComponent } from './components/update-user/update-user.compon
     UsersComponent,
     AddUserComponent,
     UpdateUserComponent,
+    LoginComponent,
+    LogoutComponent,
 
   ],
   imports: [
@@ -38,8 +44,12 @@ import { UpdateUserComponent } from './components/update-user/update-user.compon
     ReactiveFormsModule,
     HttpClientModule,
     StoreModule.forRoot(
-      { users: userReducer }),
-    EffectsModule.forRoot([UserEffects])
+      {
+        users: userReducer,
+        count: counterReducer,
+        account: accountReducer
+      }),
+    EffectsModule.forRoot([UserEffects, AccountEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]
