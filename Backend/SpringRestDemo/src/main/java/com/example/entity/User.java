@@ -1,7 +1,5 @@
 package com.example.entity;
 
-import java.util.UUID;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -9,13 +7,16 @@ import lombok.Data;
 
 @Document
 @Data
-public class Employee {
-
+public class User {
+	
 	@Id
-	private int empId;
+	private int userId;
 	private String name;
 	private String email;
 	private String phone;
 	private String password;
+	private String role;
+	private boolean isLogin;
+	
 
 }
